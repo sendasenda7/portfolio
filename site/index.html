@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denguir Senda | Développeuse Full-Stack</title>
+<meta name="description" content="Portfolio de Denguir Senda, étudiante ingénieure en développement Full-Stack.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3b1f26;--soft:#7a5560;--maroon:#9c4a5a;--dusty:#e8bcc3;--rose:#f7e4e7;--paper:#fffafa;--line:#efd3d8}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font:400 16px/1.6 "DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.1}
+a{color:inherit}
+nav{position:fixed;inset:0 0 auto;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;backdrop-filter:blur(10px);background:rgba(255,250,250,.6)}
+nav b{font:600 1.3rem Fraunces,serif}nav div{display:flex;gap:26px;font-size:.92rem}nav a{text-decoration:none;color:var(--soft)}nav a:hover{color:var(--maroon)}
+#hero{position:relative;min-height:100svh;overflow:hidden;background:radial-gradient(ellipse 34% 62% at 50% 52%,#fff 0,#fff 45%,rgba(255,255,255,0) 100%),linear-gradient(90deg,#b5707d 0,#dcaab3 14%,#f3d5da 30%,#fff 50%,#f3d5da 70%,#dcaab3 86%,#b5707d 100%)}
+.stage{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:calc(100svh - 76px);aspect-ratio:9/16;filter:drop-shadow(0 30px 40px rgba(120,50,65,.18))}
+#cv{width:100%;height:100%;display:block;animation:float 7s ease-in-out infinite;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(#0000,#000 7%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(#0000,#000 7%);mask-composite:intersect}
+@keyframes float{50%{transform:translateY(-5px)}}
+.note{position:absolute;left:5vw;top:50%;transform:translateY(-50%);max-width:290px}
+.note h1{font-size:clamp(2rem,3.4vw,3.2rem);color:var(--ink)}
+.note p{margin:10px 0 22px;color:var(--soft);font-size:1.05rem}
+.hint{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--maroon)}
+.hint svg{width:22px;height:22px;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-5px)}50%{transform:translateX(7px)}}
+.hint .m{display:none}
+#msg{position:absolute;right:5vw;top:50%;transform:translateY(-50%);max-width:260px;text-align:right;font:500 clamp(1.4rem,2.2vw,2rem)/1.2 Fraunces,serif;color:var(--ink);opacity:0;transition:opacity .4s}
+#msg.on{opacity:1}
+.cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:2;text-decoration:none;font-size:.9rem;color:var(--maroon);background:rgba(255,255,255,.85);padding:8px 18px;border-radius:99px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,5px)}}
+section{padding:96px 5vw;max-width:1120px;margin:auto}
+h2{font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:34px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+.about p{font-size:1.15rem;max-width:60ch}
+.soft{display:grid;gap:14px}.soft div{border-left:3px solid var(--dusty);padding-left:14px}.soft b{display:block}.soft span{color:var(--soft);font-size:.95rem}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.sk div{background:var(--rose);border-radius:18px;padding:22px}.sk h3{font-size:1.1rem;margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags i{font-style:normal;font-size:.8rem;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px 11px;color:var(--soft)}
+.pj{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.pj article{border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.pj h3{font-size:1.3rem}.pj p{color:var(--soft);font-size:.95rem;flex:1}
+.pj a{color:var(--maroon);font-weight:600;font-size:.92rem;text-decoration:none}.pj a:hover{text-decoration:underline}
+.tl{border-left:2px solid var(--dusty);padding-left:26px;display:grid;gap:30px;margin-bottom:56px}
+.tl h3{font-size:1.2rem}.tl small{color:var(--maroon);font-weight:600}.tl ul{margin:10px 0 0 18px;color:var(--soft);font-size:.95rem}.tl li{margin-bottom:6px}
+.ce{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.ce div{background:var(--rose);border-radius:14px;padding:14px 16px;font-size:.92rem}.ce span{display:block;color:var(--soft);font-size:.82rem}
+.ct{text-align:center}.ct p{color:var(--soft);margin:-12px auto 28px;max-width:46ch}
+.btn{display:inline-block;margin:6px;padding:12px 26px;border-radius:99px;background:var(--maroon);color:#fff;text-decoration:none;font-weight:600}
+.btn.o{background:none;color:var(--maroon);border:1.5px solid var(--maroon)}
+footer{text-align:center;padding:30px;color:var(--soft);font-size:.85rem;border-top:1px solid var(--line)}
+:focus-visible{outline:2px solid var(--maroon);outline-offset:3px}
+@media(max-width:760px){
+nav div{display:none}
+#hero{display:flex;flex-direction:column;align-items:center;padding-top:64px;min-height:auto;background:radial-gradient(ellipse 80% 45% at 50% 40%,#fff 0,#fff 45%,rgba(255,255,255,0) 100%),linear-gradient(90deg,#c58592,#f3d5da 22%,#fff 50%,#f3d5da 78%,#c58592)}
+.stage{position:relative;left:auto;transform:none;height:auto;width:min(92vw,66svh*.5625*1.3);max-width:440px}
+.note{position:static;transform:none;text-align:center;max-width:none;padding:0 6vw 26px}
+.hint{justify-content:center}.hint .d{display:none}.hint .m{display:inline}
+#msg{position:absolute;right:auto;left:0;right:0;top:auto;bottom:8%;transform:none;text-align:center;max-width:none;font-size:1.3rem;text-shadow:0 0 12px #fff,0 0 12px #fff}
+.cue{display:none}.about{grid-template-columns:1fr}section{padding:64px 6vw}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><b>DS</b><div><a href="#hero">Accueil</a><a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></div></nav>
+
+<header id="hero">
+  <div class="note">
+    <h1>Je suis Denguir Senda</h1>
+    <p>Développeuse Full-Stack</p>
+    <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 3l6 17 2.5-7L20 10.5z"/></svg><span class="d">Bouge le curseur pour m'appeler !</span><span class="m">Touche-moi pour me dire bonjour</span></div>
+  </div>
+  <div class="stage"><canvas id="cv" width="540" height="960" aria-label="Portrait animé de Senda à son bureau"></canvas><div id="msg" aria-live="polite"></div></div>
+  <a class="cue" href="#projets">Découvrir mes projets ↓</a>
+</header>
+
+<main>
+<section id="apropos"><div class="about"><div><h2>À propos</h2><p>Je construis des applications full-stack avec MERN, Django et Spring Boot, avec un intérêt grandissant pour l'IA appliquée. J'aime transformer une idée en produit complet et soigné, d'une plateforme e-commerce à des outils pilotés par IA comme un pipeline de tests QA automatisé et un agent SEO autonome.</p></div>
+<div class="soft"><div><b>Travail d'équipe</b><span>Une approche collaborative pour résoudre les problèmes</span></div><div><b>Résolution de problèmes</b><span>Une réflexion analytique face aux défis complexes</span></div><div><b>Communication</b><span>Une communication technique claire</span></div><div><b>Apprentissage rapide</b><span>Une adaptation rapide aux nouvelles technologies</span></div></div></div></section>
+<section id="competences"><h2>Compétences</h2><div class="sk" id="sk"></div></section>
+<section id="projets"><h2>Projets</h2><div class="pj" id="pj"></div></section>
+<section id="parcours"><h2>Parcours</h2><div class="tl" id="tl"></div><h2>Certifications</h2><div class="ce" id="ce"></div></section>
+<section id="contact" class="ct"><h2>Travaillons ensemble</h2><p>Un projet, un stage ou une question ? Écris-moi, je réponds avec plaisir.</p>
+<a class="btn" href="mailto:sendadenguir@gmail.com">Envoyer un email</a><a class="btn o" href="https://github.com/denguirsenda">GitHub</a><a class="btn o" href="https://linkedin.com/in/denguir-senda-11b422180">LinkedIn</a><a class="btn o" href="cv.pdf">Télécharger mon CV</a></section>
+</main>
+<footer>© 2026 Denguir Senda</footer>
+
+<script>
+const T=a=>a.map(x=>`<i>${x}</i>`).join("");
+document.getElementById("sk").innerHTML=[
+["Frontend",["React.js","Next.js","TypeScript","JavaScript","HTML/CSS"]],
+["Backend",["Node.js","Express.js","Django","Spring Boot","Python","Go","Flask"]],
+["Bases de données",["MongoDB","SQLite","SQL"]],
+["IA et automatisation",["Groq API","LLaMA 3.3","Hermes2","Playwright","BeautifulSoup"]],
+["Tests et QA",["Tests fonctionnels","Jest","Pytest","Rapports d'anomalies"]],
+["DevOps et outils",["GitHub Actions","CI/CD","Git","Electron.js","Socket.io","Stripe"]]
+].map(([t,a])=>`<div><h3>${t}</h3><div class="tags">${T(a)}</div></div>`).join("");
+const G="https://github.com/sendasenda7/";
+document.getElementById("pj").innerHTML=[
+["GoShop, site e-commerce","Plateforme e-commerce complète pour une marque de maroquinerie : catalogue, panier, authentification, et tableau de bord administrateur pour les commandes et les stocks.",["MongoDB","Express.js","React.js","Node.js"]],
+["ITBS, plateforme académique","Gestion académique pour un institut : suivi des absences, séances de rattrapage, partage de supports de cours et tableaux de bord enseignants, étudiants et administrateurs, avec un assistant IA intégré.",["Spring Boot","Next.js"]],
+["Yalla, covoiturage","Application connectant conducteurs et passagers partout en Tunisie : recherche de trajets en temps réel, messagerie instantanée et paiements intégrés.",["React.js","Node.js","MongoDB","Socket.io","Stripe"],G+"yalla-couvoiturage"],
+["FixIt, services à domicile","Mise en relation entre clients et artisans locaux vérifiés (plomberie, électricité, peinture, climatisation, menuiserie, réparation), avec un backend Django en microservices.",["Python","Django","React.js","Microservices"]],
+["Agent SEO Tourisme Tunisie","Agent IA autonome qui analyse les sites concurrents du tourisme : scraping, extraction de mots-clés, recommandations SEO par un LLM local et rapport PDF.",["Python","Playwright","BeautifulSoup","Hermes2","Flask","ReportLab"],G+"agent-seo"],
+["ChatBot Desktop","Application desktop avec chatbot IA (LLaMA 3.3 70B via Groq) et terminal intégré : thème clair/sombre, historique sauvegardé, interaction avec Windows.",["Electron.js","Node.js","Groq API"],G+"chatbot-desktop"],
+["QA-AI Workflow","Pipeline QA piloté par IA : analyse de code, génération de tests, auto-validation par une seconde passe IA, exécution réelle (Jest ou Pytest) et tableau de bord React avec export PDF.",["Go","TypeScript","React","SQLite","Groq API","Jest","Pytest"],G+"QA-test"],
+["PR Review Bot","Bot IA en CI/CD qui analyse chaque pull request GitHub et poste une revue structurée : score de qualité, points d'attention, tests manquants.",["Python","GitHub Actions","GitHub API","Groq API"],G+"pr-review-bot"]
+].map(([t,d,a,l])=>`<article><h3>${t}</h3><p>${d}</p><div class="tags">${T(a)}</div>${l?`<a href="${l}">Voir le code sur GitHub</a>`:""}</article>`).join("");
+document.getElementById("tl").innerHTML=[
+["Stagiaire QA, DevWise","2 mois",["Tests fonctionnels en boîte noire sur l'application Helpify : plans de test, cas de test et rapports d'anomalies détaillés.","Bugs classés par sévérité (critique, moyenne, faible) sur plusieurs modules : événements multi-tenant, abonnements et paiements, équipes RH, notifications et dons.","Collaboration avec l'équipe de développement pour suivre et valider les corrections."]],
+["Cycle Ingénieur Informatique, IT Business School","2025 à aujourd'hui"],
+["Classes préparatoires intégrées en informatique, IT Business School","2023 à 2025"],
+["Baccalauréat Sciences, Tunisie","2023"]
+].map(([t,d,l])=>`<div><h3>${t}</h3><small>${d}</small>${l?`<ul>${l.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}</div>`).join("");
+document.getElementById("ce").innerHTML=[
+["Python Data Associate","DataCamp",2026],["Introduction to Java and Object-Oriented Programming","Coursera",2026],["Introduction to Python Programming","Coursera",2026],["Data Analysis Using Python","Coursera",2026],
+["Database Design Cumulative Final Exam","Oracle Academy",2024],["Advanced Relational Database and SQL","Coursera",2024],["Algorithms, Data Collection, and Starting to Code","Coursera",2024],["Introduction to Relational Database and SQL","Coursera",2024],
+["Command Line Basics in Linux","Coursera",2024],["Advanced Commands in Linux","Coursera",2024],["Python Essentials 1","Cisco Networking Academy",2025],["Python Essentials 2","Cisco Networking Academy",2025]
+].map(([t,o,y])=>`<div>${t}<span>${o}, ${y}</span></div>`).join("");
+
+/* Hero interactif : zones gauche / centre / droite */
+const cv=document.getElementById("cv"),ctx=cv.getContext("2d"),mEl=document.getElementById("msg");
+const N={left:55,right:55,center:67},F={idle:null,left:[],right:[],center:[]},ready={};
+const mob=matchMedia("(max-width:760px), (pointer:coarse)");
+let cur=null,pos=0,tgt=0,hold=0,fade=0,queue=null,leaving=false,zone="",mt=[];
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(i);i.src=s});
+function draw(){ctx.clearRect(0,0,540,960);
+ if(!cur){ctx.drawImage(F.idle,0,0);return}
+ const a=Math.floor(pos),b=Math.min(a+1,N[cur]-1),f=pos-a;
+ ctx.drawImage(F[cur][a],0,0);
+ if(f>.01){ctx.globalAlpha=f;ctx.drawImage(F[cur][b],0,0);ctx.globalAlpha=1}
+ if(fade>0){ctx.globalAlpha=fade;ctx.drawImage(F.idle,0,0);ctx.globalAlpha=1}}
+function say(t,d){mt.push(setTimeout(()=>{mEl.textContent=t;mEl.classList.add("on")},d||0))}
+function hideMsg(){mt.forEach(clearTimeout);mt=[];mEl.classList.remove("on")}
+function msg(z){hideMsg();
+ if(z==="left")say("Quelqu'un à gauche ?");
+ else if(z==="right")say("Quelqu'un à droite ?");
+ else{say("Hey, c'est toi !");say("Hiiii !",1800);say("Découvre le portfolio",4000)}}
+function start(z){if(!ready[z])return;cur=z;pos=0;tgt=N[z]-1;hold=0;fade=0;leaving=false;msg(z)}
+function finish(){const q=queue;cur=null;pos=0;fade=0;leaving=false;queue=null;draw();q?start(q):hideMsg()}
+function request(z){if(z===zone)return;zone=z;
+ if(!cur)start(z);else{queue=z;if(cur==="center")leaving=true;else tgt=0}}
+let last=0;
+function tick(t){const dt=Math.min((t-last)/1000,.1);last=t;
+ if(cur){
+  if(leaving){fade+=dt*2.2;if(fade>=1)finish()}
+  else{const d=tgt-pos,s=12*dt;pos+=Math.sign(d)*Math.min(s,Math.abs(d));
+   if(Math.abs(tgt-pos)<1e-6){
+    if(tgt>0){if(cur==="center"){if(queue)leaving=true}else{hold+=dt;if(hold>2.6)tgt=0}}
+    else finish()}}
+  if(cur)draw()}
+ requestAnimationFrame(tick)}
+document.getElementById("hero").addEventListener("pointermove",e=>{
+ if(mob.matches)return;const x=e.clientX/innerWidth;request(x<.33?"left":x>.67?"right":"center")});
+cv.addEventListener("click",()=>{if(!mob.matches)return;
+ if(!cur){zone="center";start("center")}else if(cur==="center"){queue="center";leaving=true}});
+(async()=>{
+ F.idle=await img("hero-frames/idle.webp");draw();requestAnimationFrame(tick);
+ for(const s of ["center","left","right"]){
+  F[s]=await Promise.all(Array.from({length:N[s]},(_,i)=>img(`hero-frames/${s}/${s}_${String(i).padStart(3,"0")}.webp`)));
+  ready[s]=true;
+  if(s==="center"&&mob.matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches)setTimeout(()=>{if(!cur){zone="center";start("center")}},700)}
+})();
+</script>
+</body>
+</html>

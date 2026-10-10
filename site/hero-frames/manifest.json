@@ -1,0 +1,23 @@
+{
+  "width": 540,
+  "height": 960,
+  "fps": 12,
+  "idle": "idle.webp",
+  "sequences": {
+    "left": {
+      "frames": 55,
+      "pattern": "left/left_{i:03d}.webp",
+      "mode": "pingpong"
+    },
+    "right": {
+      "frames": 55,
+      "pattern": "right/right_{i:03d}.webp",
+      "mode": "pingpong"
+    },
+    "center": {
+      "frames": 67,
+      "pattern": "center/center_{i:03d}.webp",
+      "mode": "once-then-hold"
+    }
+  }
+}
